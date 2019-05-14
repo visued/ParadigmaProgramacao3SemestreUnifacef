@@ -30,7 +30,7 @@ public class AlunoDAOImpl implements AlunoDAO {
                 canal.setString(1, aluno.getNomeAluno());
                 canal.setString(2, aluno.getSexoAluno());
                 canal.setString(3, aluno.getEstadoAluno());
-                canal.execute(sql);
+                canal.execute();
                 return true;
 
             } catch (SQLException e) {
@@ -51,7 +51,7 @@ public class AlunoDAOImpl implements AlunoDAO {
             try {
                 PreparedStatement canal = con.prepareStatement(sql);
                 canal.setInt(1, aluno.getCodigo());
-                canal.execute(sql);
+                canal.execute();
                 return true;
 
             } catch (SQLException e) {
@@ -74,7 +74,7 @@ public class AlunoDAOImpl implements AlunoDAO {
                 canal.setString(2, aluno.getSexoAluno());
                 canal.setString(3, aluno.getEstadoAluno());
                 canal.setInt(4, aluno.getCodigo());
-                canal.execute(sql);
+                canal.execute();
                 return true;
 
             } catch (SQLException e) {

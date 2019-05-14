@@ -157,6 +157,12 @@ public class AlunoCadastra extends javax.swing.JFrame {
         aluno.setEstadoAluno((String)EstadojComboBox.getSelectedItem());
         
         //insere aluno no banco de dados
+        AlunoDAOImpl crud = new AlunoDAOImpl();
+        if(crud.insere(aluno)){
+            JOptionPane.showMessageDialog(null, "Aluno inserido com sucesso!");
+        }else {
+            JOptionPane.showMessageDialog(null, "Aluno não inserido!");
+        }
         
     }//GEN-LAST:event_CadastraButtonActionPerformed
 

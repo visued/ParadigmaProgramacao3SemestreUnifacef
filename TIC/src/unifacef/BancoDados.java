@@ -11,13 +11,15 @@ public class BancoDados {
 
     public static Connection conecta() {
         Connection con;
-        String url  = "jdbc:postgres://localhost:5432/academico";
+        String url  = "jdbc:postgresql://localhost:5432/academico";
         String user = "postgres";
-        String psw  = "postgres";
+        String psw  = "12345";
 
         try {
             con = DriverManager.getConnection(url, user, psw);
+            System.out.println("Conectou!!!");
             return con;
+            
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
