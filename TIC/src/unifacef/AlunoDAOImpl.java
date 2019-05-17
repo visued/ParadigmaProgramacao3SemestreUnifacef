@@ -104,13 +104,12 @@ public class AlunoDAOImpl implements AlunoDAO {
                     aluno.setEstadoAluno(ponteiro.getString("estado"));
                     alunos.add(aluno);
                 }
-
+                return alunos;
             } catch (SQLException e) {
                 System.out.println(e.getMessage());
                 return null;
             }
         }
-        return null;
     }
 
 }
