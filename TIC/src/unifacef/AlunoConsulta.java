@@ -68,6 +68,11 @@ public class AlunoConsulta extends javax.swing.JFrame {
         });
 
         jButton3.setText("Atualiza");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Fecha");
 
@@ -133,6 +138,18 @@ public class AlunoConsulta extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        int linhaSelecionada = tabela.getSelectedRow();
+        if(linhaSelecionada == -1){
+            JOptionPane.showMessageDialog(null, "Selecione um aluno");
+        }
+        else{
+            Aluno alunoSelecionado = alunos.get(linhaSelecionada);
+            AlunoCadastra atualiza = new AlunoCadastra(alunoSelecionado);
+            atualiza.setVisible(true);
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
